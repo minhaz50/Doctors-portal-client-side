@@ -1,11 +1,27 @@
 import React from "react";
 import DetailCard from "./DetailCard";
 import clock from "../../assets/icons/clock.svg";
+import marker from "../../assets/icons/marker.svg";
+import phone from "../../assets/icons/phone.svg";
 
 const Detail = () => {
   return (
-    <div>
-      <DetailCard img={clock}></DetailCard>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 pb-10 ">
+      <DetailCard
+        cardTitle="Opening Hours"
+        bgclassName="bg-gradient-to-r from-secondary to-primary"
+        img={clock}
+      ></DetailCard>
+      <DetailCard
+        cardTitle="Visit Our Location"
+        bgclassName="bg-neutral"
+        img={marker}
+      ></DetailCard>
+      <DetailCard
+        cardTitle="Contact Us No"
+        bgclassName="bg-gradient-to-r from-secondary to-primary"
+        img={phone}
+      ></DetailCard>
     </div>
   );
 };
