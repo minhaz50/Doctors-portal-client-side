@@ -51,7 +51,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl font-bold">
+        <a href className="btn btn-ghost normal-case text-xl font-bold">
           DocTors PorTal
         </a>
       </div>
