@@ -14,7 +14,7 @@ const Detail = () => {
       ></DetailCard>
       <DetailCard
         cardTitle="Visit Our Location"
-        bgClass="bg-neutral"
+        bgClass="bg-accent"
         img={marker}
       ></DetailCard>
       <DetailCard
