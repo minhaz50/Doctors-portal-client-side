@@ -4,9 +4,14 @@ import About from "./Pages/About/About";
 import Appoinment from "./Pages/Appoinment/Appoinment";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
+import RequireAuth from "./Pages/Login/RequireAuth";
 import Singup from "./Pages/Login/Singup";
 import Reviews from "./Pages/Reviews/Reviews";
 import Navbar from "./Pages/Shared/Navbar";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div className="max-w-7xl	mx-auto px-12">
@@ -14,12 +19,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/appointment" element={<Appoinment></Appoinment>}></Route>
+        <Route
+          path="/appointment"
+          element={
+            <RequireAuth>
+              <Appoinment />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/singup" element={<Singup />}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
