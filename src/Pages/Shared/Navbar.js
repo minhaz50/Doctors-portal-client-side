@@ -26,6 +26,11 @@ const Navbar = () => {
       <li>
         <Link to="/about">About</Link>
       </li>
+      {user && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
       <li>
         {user ? (
           <button className="btn btn-active btn-ghost" onClick={logout}>
@@ -65,11 +70,19 @@ const Navbar = () => {
           </ul>
         </div>
         <a href className="btn btn-ghost normal-case text-xl font-bold">
-          DocTors PorTal
+          <Link to="/">DocTors PorTal</Link>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+      </div>
+      <div className="navbar-end">
+        <label
+          for="dashboard-sidebar"
+          class="btn btn-primary drawer-button lg:hidden"
+        >
+          Open drawer
+        </label>
       </div>
     </div>
   );
