@@ -15,6 +15,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyAppoinments from "./Pages/Dashboard/MyAppoinments";
 import MyReview from "./Pages/Dashboard/MyReview";
 import AllUsers from "./Pages/Dashboard/AllUsers";
+import Contact from "./Pages/Home/Contact";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         </Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         <Route path="/about" element={<About></About>}></Route>
+        <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/singup" element={<Singup />}></Route>
       </Routes>

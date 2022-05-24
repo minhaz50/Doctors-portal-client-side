@@ -4,7 +4,11 @@ import Loading from "../Shared/Loading";
 import AllUserRow from "./AllUserRow";
 
 const AllUsers = () => {
-  const { data: users, isLoading } = useQuery("users", () =>
+  const {
+    data: users,
+    isLoading,
+    refetch,
+  } = useQuery("users", () =>
     fetch("http://localhost:5000/user", {
       method: "GET",
       headers: {
@@ -30,7 +34,11 @@ const AllUsers = () => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <AllUserRow key={user._id} user={user}></AllUserRow>
+              <AllUserRow
+                key={user._id}
+                user={user}
+                refetch={refetch}
+              ></AllUserRow>
             ))}
           </tbody>
         </table>
